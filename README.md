@@ -1,2 +1,96 @@
 # ai-pm-portfolio
 AI Product Manager personal portfolio — a dark, cinematic single-page site (3D character intro · floating skill tags · flip project cards · growth timeline), deployable to GitHub Pages.
+
+# 雨玲 AI PM 个人作品集
+
+一个深色、高级感的 AI 产品经理个人网页，支持一键部署到 GitHub Pages。
+
+---
+
+## 在线预览
+
+- 本地预览：在项目根目录运行 `python -m http.server 8080`，然后访问 `http://localhost:8080`
+- GitHub Pages：按下方步骤部署后即可访问 `https://<你的用户名>.github.io/ai-pm-portfolio`
+
+---
+
+## 项目结构
+
+```
+ai-pm-portfolio/
+├── index.html          # 主页面
+├── css/
+│   └── style.css       # 样式与动画
+├── js/
+│   └── main.js         # 交互逻辑
+├── assets/
+│   ├── avatar-3d.png    # 首页卡通人物素材
+│   └── about-photo.jpg  # 关于我页面照片
+└── README.md           # 本文件
+```
+
+---
+
+## 核心特性
+
+- **首页英雄区**：复刻深色高端背景，包含弧形光晕、地平线辉光、动态粒子。
+- **角色出场动画**：左上角卡通人物以 15 秒分阶段出场（大脚 → 下半身 → 全身 → wink 姿势）。
+- **个人介绍**：左侧为 AI PM 志向与名言，右侧展示个人照片。
+- **项目翻转卡片**：点击项目卡片可 3D 翻转，查看详情、角色与关键指标。
+- **经历成长页（Growth）**：深色背景时间轴 + 分类筛选（Internship / Project / Competition），英文内容基于简历数据。
+- **AI PM 特质模块**：补充顶尖 AI PM 应具备的 4 项底层能力。
+- **响应式布局**：适配桌面、平板与手机。
+- **无障碍**：支持 `prefers-reduced-motion` 减少动画。
+
+---
+
+## 部署到 GitHub Pages
+
+### 1. 创建仓库并推送
+
+```bash
+# 进入项目目录
+cd ai-pm-portfolio
+
+# 初始化 Git 仓库
+git init
+git add .
+git commit -m "Initial commit: AI PM portfolio site"
+
+# 在 GitHub 新建仓库，例如 https://github.com/<你的用户名>/ai-pm-portfolio.git
+# 然后关联并推送
+git branch -M main
+git remote add origin https://github.com/<你的用户名>/ai-pm-portfolio.git
+git push -u origin main
+```
+
+### 2. 开启 GitHub Pages
+
+1. 打开 GitHub 仓库页面。
+2. 点击 **Settings** → 左侧 **Pages**。
+3. 在 **Source** 中选择 **Deploy from a branch**，分支选 `main`，目录选 `/ (root)`。
+4. 点击 **Save**，等待 1-2 分钟即可通过 `https://<你的用户名>.github.io/ai-pm-portfolio` 访问。
+
+---
+
+## 自定义内容
+
+- 替换 `assets/avatar-3d.png` 为更高清的卡通人物图（建议保持竖版比例）。
+- 替换 `assets/about-photo.jpg` 为新的个人照片。
+- 修改 `index.html` 中的邮箱、GitHub 链接、项目文案与 Growth 经历数据。
+- 调整 `css/style.css` 中的 `--accent`、`--accent-bright` 变量即可换色。
+
+---
+
+## 技术栈
+
+- 纯 HTML5 / CSS3 / 原生 JavaScript
+- Google Fonts（Outfit）
+- 无第三方框架或构建工具，可直接部署
+
+---
+
+## 说明
+
+首页角色出场动画基于单张静态素材，通过 CSS `clip-path`、缩放与位移动画模拟分阶段揭示效果。如需更精细的“分层 3D 动画”，需准备脚部、下半身、全身的分层素材或视频。
+
